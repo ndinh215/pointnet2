@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pointnet:
+    build:
+      context: .
+      args:
+        - APP_HOME=${APP_HOME}
+    ports:
+      - 8888:8888
+    networks:
+      - net-pointnet
+    volumes:
+      - .:${APP_HOME}:rw
+networks:
+  net-pointnet:
